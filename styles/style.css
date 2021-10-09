@@ -1,0 +1,16 @@
+.gameboard-area {
+    display: flex
+}
+
+.gameboard-container {
+    display: grid;
+    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: repeat(3, 150px);
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+}
+
+.cell {
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+}
