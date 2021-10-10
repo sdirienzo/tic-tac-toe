@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div class="title-area">
-        <h1 id="title">Tic-Tac-Toe</h1>
-    </div>
-    <div class="player-names-area">
-        <label for="playerx">Player X:</label>
-        <input type="text" id="playerx" name="playerx">
-        <label for="playero">Player O:</label>
-        <input type="text" id="playero" name="playero">
-    </div>
-    <div class="gameboard-area">
-        <div class="gameboard-container"></div>
-        <div class="start-restart-btn-areas">
+    <header>
+        <h1>Tic Tac Toe</h1>
+    </header>
+    <main>
+        <section class="gameboard-area">
+            <div class="gameboard-container"></div>
+        </section>
+        <section class="player-names-area">
+            <input id="player-x-name" type="text" placeholder="Player X">
+            <input id="player-o-name" type="text" placeholder="Player O">
+        </section>
+        <section class="button-area">
             <button id="start-restart-btn">Start</button>
-        </div>
-    </div>
+        </section>
+    </main>
 <script type="text/javascript" src="./scripts/script.js"></script>
 </body>
 </html>
