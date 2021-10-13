@@ -4,41 +4,44 @@ const Player = (name, marker) => {
 }
 
 const gameBoard = (() => {
-    const gameboardContainer = document.getElementsByClassName("gameboard-container")[0];
-
     let gameboard = [];
 
     const getGameboard = () => gameboard;
 
-    const createGameboard = () => {
+    const createGameboard = (gameboardContainer, nodeClass) => {
         for (let index = 0; index < 9; index++) {
             let newDiv = document.createElement("div");
-            newDiv.classList.add("cell");
+            newDiv.classList.add(`${nodeClass}`);
             gameboardContainer.appendChild(newDiv);
         }
     };
     
-    const emptyGameboardArray = () => {
+    const emptyGameboard = () => {
         while (gameboard.length > 0) {
             gameboard.pop();
         }
     };
 
-    const clearGameboard = () => {
+    const clearGameboard = (gameboardContainer) => {
         while (gameboardContainer.firstChild) {
             gameboardContainer.removeChild(gameboardContainer.firstChild);
         }
-        emptyGameboardArray();
+        emptyGameboard();
     };
 
     const isPositionFree = position => {
         return !gameboard[position];
     };
 
-    const addToBoard = (position, marker) => {
+    const addToGameboard = (position, marker) => {
         gameboard[position] = marker;
     };
-    return {getGameboard, createGameboard, clearGameboard, isPositionFree, addToBoard}
+
+    const addMarkerToGameboard = (node, position, marker) => {
+        node.innerText = marker;
+        addToGameboard(position, marker);
+    };
+    return {getGameboard, createGameboard, clearGameboard, isPositionFree, addMarkerToGameboard}
 })();
 
-gameBoard.createGameboard();
+// gameBoard.createGameboard();
